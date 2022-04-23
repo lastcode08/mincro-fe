@@ -1,9 +1,10 @@
+import "./index.scss";
+import "remixicon/fonts/remixicon.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
-import "./index.scss";
 import Products from "./components/products";
 
 const App = () => (
