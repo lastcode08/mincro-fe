@@ -1,8 +1,5 @@
-import { BehaviorSubject } from "rxjs";
-
 const API_SERVER = "http://localhost:8080";
-
-export const jwt = new BehaviorSubject(null);
+import { jwt } from "../cart";
 
 export const login = (username: string, password: string) =>
   fetch(`${API_SERVER}/auth/login`, {
