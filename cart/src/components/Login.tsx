@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { login } from "../api/cart.api";
-import useLoggedIn from "../hooks/useLoggedIn";
+import { useLoggedIn } from "../hooks/useLoggedIn";
 
 const Login = () => {
   const isLoggedIn = useLoggedIn();
@@ -24,12 +24,11 @@ const Login = () => {
 
       {state.showLogin && (
         <div
-          className="absolute p-5 border-4 border-blue-800 bg-white"
+          className="absolute p-5 border-4 border-blue-800 bg-white text-black"
           style={{
             width: 300,
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
+            top: "2rem",
+            left: -250,
           }}
         >
           <input

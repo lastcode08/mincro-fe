@@ -7,13 +7,15 @@ import Header from "./components/Header";
 
 import Products from "./components/products";
 
-const App = () => (
-  <div className="text-3xl mx-auto max-w-6xl">
-    <Header />
-    <div className="my-10">
-      <Products />
+const App = () => {
+  return (
+    <div className="text-3xl mx-auto max-w-6xl">
+      <Header />
+      <div className="my-10">
+        <Products />
+      </div>
+      <Footer />
     </div>
-    <Footer />
-  </div>
-);
+  );
+};
 ReactDOM.render(<App />, document.getElementById("app"));

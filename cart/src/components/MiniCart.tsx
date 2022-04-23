@@ -6,7 +6,7 @@ import { currency } from "home/utilities";
 
 const MiniCart = () => {
   const [state, setState] = useState({
-    items: [],
+    items: null,
     showCart: false,
   });
 
@@ -25,8 +25,7 @@ const MiniCart = () => {
     };
   }, []);
 
-  if (!state.items || state.items?.length < 1)
-    return <h1>No Cart Item Found</h1>;
+  if (!state.items) return null;
 
   return (
     <>
@@ -43,16 +42,15 @@ const MiniCart = () => {
       {state.showCart && (
         <>
           <div
-            className="absolute p-5 border-4 border-blue-800 bg-white"
+            className="absolute p-5 border-4 border-blue-800 bg-white "
             style={{
               width: 300,
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
+              top: "2rem",
+              left: -250,
             }}
           >
             <div
-              className="grid gap-3 text-sm"
+              className="grid gap-3 text-sm text-black"
               style={{ gridTemplateColumns: "1fr 3fr 10fr 2fr" }}
             >
               {state.items.map((item) => (
