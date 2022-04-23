@@ -21,10 +21,16 @@ const Login = () => {
       >
         <i className="ri-fingerprint-line text-2xl" id="showLogin"></i>
       </span>
+
       {state.showLogin && (
         <div
           className="absolute p-5 border-4 border-blue-800 bg-white"
-          style={{ width: 300, top: "2rem" }}
+          style={{
+            width: 300,
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
         >
           <input
             type="text"

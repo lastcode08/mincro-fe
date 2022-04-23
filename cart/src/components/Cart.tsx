@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { login } from "../api/cart.api";
 import { jwt } from "../cart";
 import Login from "./Login";
+import MiniCart from "./MiniCart";
 
 const Cart = () => {
   const [token, setToken] = useState("");
@@ -17,7 +18,8 @@ const Cart = () => {
   return (
     <div>
       <div>JWT : {token}</div>
-      <Login />
+      {!token && <Login />}
+      <MiniCart />
     </div>
   );
 };
