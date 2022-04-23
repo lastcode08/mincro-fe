@@ -1,19 +1,22 @@
+import Footer from "home/Footer";
+import Header from "home/Header";
 import React from "react";
 import ReactDOM from "react-dom";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Product from "./components/Product";
 import "./index.scss";
 
-import Header from "home/Header";
-import Footer from "home/Footer";
-import SafeComponent from "./components/SafeComponent";
-
 const App = () => (
-  <div className="text-3xl mx-auto max-w-6xl">
-    <SafeComponent>
+  <BrowserRouter>
+    <div className="text-3xl mx-auto max-w-6xl">
       <Header />
-    </SafeComponent>
-    <div className="my-10">PDP Content</div>
-    <Footer />
-  </div>
+      <div className="my-10">
+        <Routes>
+          <Route path="/product/:id" element={<Product />} />
+        </Routes>
+      </div>
+      <Footer />
+    </div>
+  </BrowserRouter>
 );
 ReactDOM.render(<App />, document.getElementById("app"));

@@ -47,6 +47,8 @@ module.exports = {
       exposes: {
         "./Header": "./src/components/Header.tsx",
         "./Footer": "./src/components/Footer.tsx",
+        "./products.api": "./src/api/products.api.ts",
+        "./utilities": "./src/utilities.ts",
       },
       shared: {
         ...deps,
