@@ -35,7 +35,7 @@ const MiniCart = () => {
         }
         id="showcart_span"
       >
-        <i className="ri-shopping-cart-2-fill text-2xl" id="showCart"></i>
+        <i id="showcart" className="ri-shopping-cart-2-fill text-2xl"></i>
         {state.items.length}
       </span>
 

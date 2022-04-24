@@ -9,8 +9,13 @@ function Header() {
     <div className="p-5 bg-blue-500 text-white text-3xl font-bold">
       <div className="flex">
         <div className="flex-grow">
-          <Link to="/">Fidget Spinners World</Link> |{" "}
-          <Link to="/cart">Cart</Link>
+          <Link id="to_home" to="/">
+            Fidget Spinners World
+          </Link>{" "}
+          |{" "}
+          <Link id="to_cart" to="/cart">
+            Cart
+          </Link>
         </div>
         <div className="flex-end relative">
           <Login />

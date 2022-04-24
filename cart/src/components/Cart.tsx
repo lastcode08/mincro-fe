@@ -31,7 +31,7 @@ const Cart = () => {
         <div></div>
         <div></div>
         <div></div>
-        <div className="text-right" id="grand_total">
+        <div className="text-right" id="grandtotal">
           {currency.format(
             state.items.reduce((a, v) => a + v.quantity * v.price, 0)
           )}

@@ -18,8 +18,9 @@ const Login = () => {
         onClick={() =>
           setState((prev) => ({ ...prev, showLogin: !prev.showLogin }))
         }
+        id="showlogin_span"
       >
-        <i className="ri-fingerprint-line text-2xl" id="showLogin"></i>
+        <i className="ri-fingerprint-line text-2xl" id="showlogin"></i>
       </span>
 
       {state.showLogin && (
@@ -52,7 +53,7 @@ const Login = () => {
           <button
             className="bg-green-900 text-white py-2 px-5 rounded-md w-full"
             onClick={() => login(state.username, state.password)}
-            id="loginBtn"
+            id="loginbtn"
           >
             Login
           </button>
