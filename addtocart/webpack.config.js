@@ -43,8 +43,13 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "addtocart",
       filename: "remoteEntry.js",
-      remotes: {},
-      exposes: {},
+      remotes: {
+        cart: "cart@http://localhost:3002/remoteEntry.js",
+      },
+      exposes: {
+        "./AddToCart": "./src/components/AddToCart.tsx",
+        "./placeAddToCart": "./src/placeAddToCart.tsx",
+      },
       shared: {
         ...deps,
         "solid-js": {
