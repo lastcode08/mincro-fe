@@ -50,6 +50,7 @@ module.exports = {
       },
       exposes: {
         "./Header": "./src/components/Header.tsx",
+        "./Home": "./src/components/Home.tsx",
         "./Footer": "./src/components/Footer.tsx",
         "./products.api": "./src/api/products.api.ts",
         "./utilities": "./src/utilities.ts",

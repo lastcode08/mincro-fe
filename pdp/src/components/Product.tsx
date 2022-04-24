@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 import { getProductById } from "home/products.api";
 import { currency } from "home/utilities";
 import { useParams } from "react-router-dom";
+import placeAddToCart from "addtocart/placeAddToCart";
 
 const Product = () => {
   const { id } = useParams();
@@ -10,11 +11,19 @@ const Product = () => {
 
   useEffect(() => {
     if (id) {
-      getProductById(id).then(setProduct);
+      getProductById(id).then((data) => setProduct(data));
     } else {
       setProduct(null);
     }
   }, []);
+
+  const addToCart = useRef(null);
+
+  useEffect(() => {
+    if (addToCart.current) {
+      placeAddToCart(addToCart.current, product.id);
+    }
+  }, [product]);
 
   if (!product) return <h1>No Product Found</h1>;
 
@@ -30,6 +39,7 @@ const Product = () => {
             {currency.format(product.price)}
           </div>
         </div>
+        <div ref={addToCart}></div>
         <div className="mt-10">{product.description}</div>
         <div className="mt-10">{product.longDescription}</div>
       </div>

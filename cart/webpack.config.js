@@ -54,6 +54,7 @@ module.exports = {
         "./useLoggedIn": "./src/hooks/useLoggedIn.tsx",
         "./Login": "./src/components/Login.tsx",
         "./MiniCart": "./src/components/MiniCart.tsx",
+        "./Cart": "./src/components/Cart.tsx",
       },
       shared: {
         ...deps,

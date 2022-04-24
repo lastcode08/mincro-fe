@@ -1,25 +1,18 @@
 import React, { useEffect, useState } from "react";
 
 import { cart } from "cart/cart";
-import { useLoggedIn } from "cart/useLoggedIn";
 import { clearCart } from "cart/cart.api";
 import { currency } from "home/utilities";
 
 const Cart = () => {
-  const isLoggedIn = useLoggedIn();
-
   const [state, setState] = useState({
     items: [],
   });
 
   useEffect(() => {
-    cart.subscribe((value) =>
+    return cart.subscribe((value) =>
       setState((prev) => ({ ...prev, items: value?.cartItems ?? [] }))
     );
-
-    return () => {
-      cart.unsubscribe();
-    };
   }, []);
 
   return (

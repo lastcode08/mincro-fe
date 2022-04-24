@@ -6,7 +6,9 @@ export default ({ id }) => {
   const [isLoggedIn, setIsLoggedIn] = createSignal(false);
 
   createEffect(() => {
-    jwt.subscribe((value) => setIsLoggedIn(!!jwt));
+    jwt.subscribe((value) => {
+      setIsLoggedIn(!!value);
+    });
 
     return () => {
       jwt.unsubscribe();
@@ -14,16 +16,13 @@ export default ({ id }) => {
   });
 
   return (
-    <Show
-      when={isLoggedIn()}
-      children={
-        <button
-          onClick={() => addToCart(id)}
-          className="bg-red-900 text-white py-2 rounded-md text-small"
-        >
-          Add To Cart
-        </button>
-      }
-    />
+    <Show when={isLoggedIn()}>
+      <button
+        onClick={() => addToCart(id)}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3"
+      >
+        Add To Cart
+      </button>
+    </Show>
   );
 };

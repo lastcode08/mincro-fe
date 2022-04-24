@@ -7,13 +7,9 @@ export const useLoggedIn = () => {
   useEffect(() => {
     setIsLoggedIn(!!jwt.value);
 
-    jwt.subscribe(() => {
-      setIsLoggedIn(!!jwt.value);
+    return jwt.subscribe((value) => {
+      setIsLoggedIn(!!value);
     });
-
-    return () => {
-      jwt.unsubscribe();
-    };
   }, []);
 
   return isLoggedIn;
